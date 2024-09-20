@@ -8,9 +8,16 @@ static void StartLive(IPlataforma plataforma) {
     live.Transmitir();
     live.Resultado();
 }
+static void StartLiveAvancada(IPlataforma plataforma)
+{
+    LiveAvancada live = new LiveAvancada(plataforma);
+    live.Transmitir();
+    live.Resultado();
+    live.Legendas();
+    live.Comentarios();
+}
 
-
-    StartLive(new YouTube());
+    StartLiveAvancada(new YouTube());
     StartLive(new FaceBook());
     StartLive(new Twith());
 Console.ReadLine();
